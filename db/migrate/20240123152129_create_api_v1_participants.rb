@@ -5,7 +5,7 @@ class CreateApiV1Participants < ActiveRecord::Migration[7.1]
       t.string :email
       t.integer :participant_id
       t.boolean :attending
-      t.references :event, null: false, foreign_key: true
+      t.references :events, null: false, foreign_key: true
 
 
       t.timestamps
