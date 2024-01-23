@@ -1,5 +1,5 @@
 class Api::V1::CategoriesController < ApplicationController
-def index
+  def index
     @categories = Api::V1::Category.all
     @categories.each do |category|
       category.event_count = category.events.count

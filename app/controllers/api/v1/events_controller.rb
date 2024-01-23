@@ -1,6 +1,6 @@
 class Api::V1::EventsController < ApplicationController
-def index
-   @events = Api::V1::Event.all
+  def index
+    @events = Api::V1::Event.all
   end
 
   # GET /events/1 or /events/1.json
@@ -67,4 +67,3 @@ def index
                                   :banner, :category_id, :tickets)
   end
 end
-

@@ -1,6 +1,5 @@
 class Api::V1::ParticipantsController < ApplicationController
-  def index; end
-def index
+  def index
     @participants = Participant.all
   end
 
@@ -65,4 +64,3 @@ def index
     params.require(:participant).permit(:name, :email, :event_id, :attending)
   end
 end
-
