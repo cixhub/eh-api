@@ -7,6 +7,7 @@ class CreateApiV1Participants < ActiveRecord::Migration[7.1]
       t.boolean :attending
       t.references :event, null: false, foreign_key: true
 
+
       t.timestamps
     end
   end

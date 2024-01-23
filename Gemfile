@@ -10,6 +10,9 @@ gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
+gem 'devise'
+gem 'devise_token_auth', '>= 1.2.2', git: "https://github.com/lynndylanhurley/devise_token_auth"
+
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
