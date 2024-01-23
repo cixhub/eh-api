@@ -1,6 +1,7 @@
 class Api::V1::ParticipantsController < ApplicationController
   def index
     @participants = @events = Api::V1::Participant.all
+    format.html { render html: @participants }
     render json: { participants: @participants }
   end
 
