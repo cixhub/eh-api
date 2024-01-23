@@ -1,9 +1,8 @@
 class Api::V1::EventsController < ApplicationController
   def index
     @events = Api::V1::Event.all
-    format.html { render html: @events }
     render json: { events: @events }
-  end
+end
 
   # GET /events/1 or /events/1.json
   def show; end

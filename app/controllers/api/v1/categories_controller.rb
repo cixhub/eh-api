@@ -4,7 +4,6 @@ class Api::V1::CategoriesController < ApplicationController
     @categories.each do |category|
       category.event_count = category.events.count
     end
-    format.html { render html: @categories }
     render json: { categories: @categories }
   end
 
