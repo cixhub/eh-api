@@ -1,6 +1,6 @@
 class Api::V1::ParticipantsController < ApplicationController
   def index
-    @participants = Participant.all
+    @participants =  @events = Api::V1::Participant.all
   end
 
   # GET /participants/1 or /participants/1.json
