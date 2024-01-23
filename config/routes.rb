@@ -2,16 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   namespace :api do
     namespace :v1 do
-      get 'participants/index'
-      get 'participants/show'
-      get 'participants/create'
-      get 'participants/update'
-      get 'participants/destroy'
-      get 'categories/index'
-      get 'categories/show'
-      get 'categories/create'
-      get 'categories/update'
-      get 'categories/destroy'
+      resources :participants, only: [:index, :show, :create, :update, :destroy]
+      resources :categories, only: [:index, :show, :create, :update, :destroy]
+      resources :events, only: [:index, :show, :create, :update, :destroy]
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
