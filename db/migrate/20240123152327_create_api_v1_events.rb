@@ -1,6 +1,6 @@
-class CreateApiV1Events < ActiveRecord::Migration[7.1]
+class Events < ActiveRecord::Migration[7.1]
   def change
-    create_table :api_v1_events do |t|
+    create_table :events do |t|
       t.string "name"
       t.string "title"
       t.string "description"
@@ -17,7 +17,7 @@ class CreateApiV1Events < ActiveRecord::Migration[7.1]
       t.string "banner"
       t.integer "category_id"
       t.string "event_type", default: "Private"
-    
+
 
       t.timestamps
     end

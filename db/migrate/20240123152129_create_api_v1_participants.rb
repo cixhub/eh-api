@@ -1,6 +1,6 @@
-class CreateApiV1Participants < ActiveRecord::Migration[7.1]
+class Participants < ActiveRecord::Migration[7.1]
   def change
-    create_table :api_v1_participants do |t|
+    create_table :participants do |t|
       t.string :name
       t.string :email
       t.integer :participant_id

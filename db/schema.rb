@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_23_161212) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "api_v1_categories", force: :cascade do |t|
+  create_table "categories", id: :bigint, default: -> { "nextval('api_v1_categories_id_seq'::regclass)" }, force: :cascade do |t|
     t.string "name"
     t.string "icon"
     t.string "description"
@@ -22,7 +22,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_23_161212) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "api_v1_events", force: :cascade do |t|
+  create_table "events", id: :bigint, default: -> { "nextval('api_v1_events_id_seq'::regclass)" }, force: :cascade do |t|
     t.string "name"
     t.string "title"
     t.string "description"
@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_23_161212) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "api_v1_participants", force: :cascade do |t|
+  create_table "participants", id: :bigint, default: -> { "nextval('api_v1_participants_id_seq'::regclass)" }, force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.integer "participant_id"
