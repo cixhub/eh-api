@@ -1,4 +1,5 @@
 class Api::V1::EventsController < ApplicationController
+  before_action :set_event, only: %i[show edit update destroy]
   def index
     @events = Api::V1::Event.all
     render json: { events: @events }

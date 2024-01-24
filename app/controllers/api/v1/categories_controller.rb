@@ -1,4 +1,5 @@
 class Api::V1::CategoriesController < ApplicationController
+  before_action :set_category, only: %i[show edit update destroy]
   def index
     @categories = Api::V1::Category.all
     @categories.each do |category|
