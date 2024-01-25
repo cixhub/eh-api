@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
   namespace :api do
     namespace :v1 do
+      get 'event_schedules/index'
+      get 'event_schedules/show'
+      get 'event_schedules/create'
+      get 'event_schedules/update'
+      get 'event_schedules/destroy'
       resources :participants, only: [:index, :show, :create, :update, :destroy]
       resources :categories, only: [:index, :show, :create, :update, :destroy]
       resources :events, only: [:index, :show, :create, :update, :destroy]
