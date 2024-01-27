@@ -11,6 +11,8 @@ gem 'pg', '~> 1.1'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'devise'
 gem 'devise_token_auth', '>= 1.2.2', git: 'https://github.com/lynndylanhurley/devise_token_auth'
+gem 'omniauth'
+gem "omniauth-rails_csrf_protection"
 gem 'puma', '>= 5.0'
 gem 'rswag'
 

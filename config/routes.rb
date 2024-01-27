@@ -1,7 +1,21 @@
 Rails.application.routes.draw do
+  mount_devise_token_auth_for 'User', at: 'auth'
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
-  devise_for :users
+
+  devise_for :users, controllers: {
+    sessions: 'devise/sessions',
+    registrations: 'devise/registrations'
+  }
+
+  authenticated :user do
+    root 'dashboard#index', as: :authenticated_root
+  end
+
+  unauthenticated do
+    root 'pages#home'
+  end
+
   namespace :api do
     namespace :v1 do
       resources :participants, only: [:index, :show, :create, :update, :destroy]
@@ -14,7 +28,6 @@ Rails.application.routes.draw do
       resources :event_schedules, only: [:index, :show, :create, :update, :destroy]
     end
   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
