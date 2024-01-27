@@ -9,7 +9,12 @@ gem 'rails', '~> 7.1.2'
 gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
+gem 'devise'
+gem 'devise_token_auth', '>= 1.2.2', git: 'https://github.com/lynndylanhurley/devise_token_auth'
+gem 'omniauth'
+gem 'omniauth-rails_csrf_protection'
 gem 'puma', '>= 5.0'
+gem 'rswag'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
@@ -33,7 +38,7 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
-# gem "rack-cors"
+gem 'rack-cors'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
