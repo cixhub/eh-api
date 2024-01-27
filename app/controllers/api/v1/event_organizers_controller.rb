@@ -1,5 +1,4 @@
 class Api::V1::EventOrganizersController < ApplicationController
-
   def index
     @event_organizers = Api::V1::EventOrganizer.where(event_id: params[:event_id])
     render json: @event_organizers
@@ -15,7 +14,7 @@ class Api::V1::EventOrganizersController < ApplicationController
     end
   end
 
-      def show
+  def show
     @event_organizers = EventComment.find(params[:id])
   end
 end

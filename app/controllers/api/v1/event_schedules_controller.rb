@@ -28,10 +28,11 @@ class Api::V1::EventSchedulesController < ApplicationController
       render :edit
     end
   end
-  
-   def show
+
+  def show
     @event_schedules = EventComment.find(params[:id])
   end
+
   def destroy
     @event_schedule.destroy
     redirect_to event_schedules_url, notice: 'Event schedule was successfully destroyed.'

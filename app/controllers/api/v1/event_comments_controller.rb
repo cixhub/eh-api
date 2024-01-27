@@ -1,7 +1,7 @@
 class Api::V1::EventCommentsController < ApplicationController
   before_action :set_event_comment, only: %i[show edit update destroy]
 
-   def index
+  def index
     @event_comments = Api::V1::EventComment.where(event_id: params[:event_id])
     render json: @event_comments
   end
