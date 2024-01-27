@@ -1,7 +1,7 @@
 class Api::V1::EventPaymentsController < ApplicationController
 
   def index
-    @event_payments = EventPayment.where(event_id: params[:event_id])
+    @event_payments = Api::V1::EventPayment.where(event_id: params[:event_id])
     render json: @event_payments
   end
 

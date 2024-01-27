@@ -21,6 +21,9 @@ class Api::V1::EventCommentsController < ApplicationController
     @event_comment = EventComment.find(params[:id])
   end
 
+  def edit; end
+  def update; end
+
   def destroy
     @event_comment.destroy
     redirect_to @event_comment.event, notice: 'Comment was successfully destroyed.'

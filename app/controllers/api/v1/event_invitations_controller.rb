@@ -1,7 +1,7 @@
 class Api::V1::EventInvitationsController < ApplicationController
 
   def index
-    @event_invitations = EventInvitation.where(event_id: params[:event_id])
+    @event_invitations = Api::V1::EventInvitation.where(event_id: params[:event_id])
     render json: @event_invitations
   end
 
