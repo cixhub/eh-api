@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'User', at: 'auth'
-  mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Ui::Engine => '/api-docs'
 
-devise_for :users, controllers: {
+  devise_for :users, controllers: {
     sessions: 'devise/sessions',
     registrations: 'devise/registrations'
-  }, path_names: { sign_in: 'login', sign_out: 'logout' }
+  }
 
   authenticated :user do
     root 'dashboard#index', as: :authenticated_root
