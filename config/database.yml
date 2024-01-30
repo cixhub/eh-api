@@ -79,6 +79,4 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV['DATABASE_URL'] %>
-  username: eharbor_api
-  password: <%= ENV["EHARBOR_API_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
